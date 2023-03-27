@@ -13,6 +13,7 @@
   gap: 20px;
 }
 .nav-items a {
+  font-size: 1.2rem;
   color: #fff;
   text-decoration: none;
 }
