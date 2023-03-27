@@ -1,0 +1,12 @@
+/** @format */
+
+.cart-container {
+  padding: 0 10px;
+  background-color: rgba(255, 153, 0, 0.3);
+}
+
+.summary-items {
+  text-align: left;
+  position: sticky;
+  top: 30px;
+}
