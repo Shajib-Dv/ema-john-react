@@ -10,3 +10,8 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
+
+.cart-container {
+  padding: 0 10px;
+  text-align: center;
+}
