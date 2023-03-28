@@ -12,7 +12,7 @@ const Product = (props) => {
       <p>Price: ${price}</p>
       <p>Manufacturer: {seller}</p>
       <p>Ratting: {ratings} star</p>
-      <button onClick={() => props.productAddToCart(props.product)}>
+      <button onClick={() => props.handleAddToCart(props.product)}>
         Add to Cart{" "}
         <span>
           <svg

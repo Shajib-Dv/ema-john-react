@@ -3,7 +3,7 @@
 import React from "react";
 import "./Cart.css";
 const Cart = ({ cart }) => {
-  //   console.log(cart);
+  // console.log(cart);
 
   const totalPrice = cart?.reduce((prev, current) => prev + current.price, 0);
   const totalShippingCost = cart?.reduce(
