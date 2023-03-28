@@ -5,11 +5,15 @@ import "./Cart.css";
 const Cart = ({ cart }) => {
   // console.log(cart);
 
-  const totalPrice = cart?.reduce((prev, current) => prev + current.price, 0);
-  const totalShippingCost = cart?.reduce(
-    (prev, current) => prev + current.shipping,
-    0
-  );
+  let totalPrice = 0;
+  let totalShippingCost = 0;
+  let quantity = 0;
+  for (const product of cart) {
+    product.quantity = product.quantity || 1;
+    quantity = quantity + product.quantity;
+    totalPrice = totalPrice + product.price * product.quantity;
+    totalShippingCost = totalShippingCost + product.shipping * product.quantity;
+  }
   const tax = totalPrice * 0.05;
   const grandTotal = totalPrice + totalShippingCost + tax;
 
@@ -18,7 +22,7 @@ const Cart = ({ cart }) => {
       <div className="cart-container">
         <div className="summary-items">
           <h3>Order Summary</h3>
-          <p>Selected Order : {cart?.length}</p>
+          <p>Selected Order : {quantity}</p>
           <p>Total price : ${totalPrice}</p>
           <p>Total shipping cost : ${totalShippingCost}</p>
           <p>Tax : ${tax.toFixed(2) || 0}</p>
