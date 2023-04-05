@@ -5,6 +5,7 @@ import { addToDb, getShoppingCart } from "../../utilities/fakedb";
 import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
 import "./Shop.css";
+import Header from "../Header/Header";
 const Shop = () => {
   const [products, setProducts] = useState([]);
 
