@@ -2,12 +2,16 @@
 
 import React, { useContext, useState } from "react";
 import "./Login.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 
 const Login = () => {
   const [error, setError] = useState("");
   const { userLogIn } = useContext(AuthContext);
+  const [showPs, setShowPs] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   //handle log in
 
@@ -21,6 +25,7 @@ const Login = () => {
       .then((result) => {
         console.log(result.user);
         event.target.reset();
+        navigate(from, { replace: true });
       })
       .catch((error) => setError(error.message));
   };
@@ -41,12 +46,15 @@ const Login = () => {
         <div className="form-control">
           <label htmlFor="password">Password</label>
           <input
-            type="password"
+            type={showPs ? "text" : "password"}
             name="password"
             id="password"
             required
             placeholder="Your password"
           />
+          <p className="btn" onClick={() => setShowPs(!showPs)}>
+            {showPs ? "Hide password" : "Show password"}
+          </p>
         </div>
         {error && <small>{error}</small>}
         <br />

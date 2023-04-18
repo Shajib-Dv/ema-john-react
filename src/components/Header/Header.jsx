@@ -7,7 +7,7 @@ import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 const Header = () => {
   const { user, userLogOut } = useContext(AuthContext);
-  console.log(user?.email);
+  // console.log(user?.email);
   return (
     <>
       <nav className="header">
@@ -17,13 +17,14 @@ const Header = () => {
           <Link to="/orders">Orders</Link>
           <Link to="/inventory">Inventory</Link>
           <Link to="/login">Login</Link>
-          {user ? (
+          <Link to="/signup">Sign up</Link>
+          {user && (
             <div>
-              <span>{user?.email}</span>
-              <button onClick={() => userLogOut()}>Sign out</button>
+              <span>Welcome {user?.email}</span>
+              <button className="btn" onClick={() => userLogOut()}>
+                Sign out
+              </button>
             </div>
-          ) : (
-            <Link to="/signup">Sign up</Link>
           )}
         </div>
       </nav>
