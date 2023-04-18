@@ -1,0 +1,47 @@
+/** @format */
+
+.form-container {
+  width: 600px;
+  height: auto;
+  border: 2px solid rgba(128, 0, 128, 0.503);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 50px auto;
+  box-shadow: 10px 4px 10px 4px rgba(255, 0, 255, 0.255);
+}
+
+.form-title {
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  margin-bottom: 5px;
+}
+.form-control label {
+  display: block;
+}
+
+.form-control input {
+  width: 80%;
+  outline: none;
+  border: none;
+  padding: 10px 0 10px 10px;
+  color: white;
+  border-radius: 4px;
+}
+
+.btn-submit {
+  width: 40%;
+  padding: 10px;
+  border: 2px solid rgba(105, 0, 128, 0.35);
+  border-radius: 6px;
+  margin: 10px 0;
+  background: rgba(255, 255, 0, 0.225);
+}
+
+.btn-submit:hover {
+  background-color: rgba(255, 255, 0, 0.481);
+}
