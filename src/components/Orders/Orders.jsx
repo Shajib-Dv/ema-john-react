@@ -12,11 +12,11 @@ import {
 
 const Orders = () => {
   const product = useLoaderData();
-  //   console.log(product);
+  // console.log(product);
   const [cart, setCart] = useState(product);
 
   const handleDelete = (id) => {
-    const remaining = cart.filter((product) => product.id !== id);
+    const remaining = cart.filter((product) => product._id !== id);
     setCart(remaining);
     removeFromDb(id);
   };
@@ -29,7 +29,7 @@ const Orders = () => {
     <div className="shop-container">
       <div className="review-container">
         {cart.map((p) => (
-          <ReviewItem key={p.id} product={p} handleDelete={handleDelete} />
+          <ReviewItem key={p._id} product={p} handleDelete={handleDelete} />
         ))}
       </div>
 
